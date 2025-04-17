@@ -1,0 +1,312 @@
+/* Responsive Design Styles */
+
+/* Base styles for all devices */
+html {
+    font-size: 16px;
+}
+
+/* Mobile First Approach */
+@media (max-width: 480px) {
+    html {
+        font-size: 14px;
+    }
+
+    .header-container {
+        flex-direction: column;
+        padding: 10px;
+        text-align: center;
+    }
+
+    .logo {
+        margin-bottom: 15px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+    }
+
+    .container {
+        margin: 80px auto 20px;
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 1.8em;
+        margin: 15px 0;
+    }
+
+    h2 {
+        font-size: 1.4em;
+        margin: 10px 0;
+    }
+
+    .scanner-container {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .upload-section, .camera-section {
+        width: 100%;
+        min-width: auto;
+        padding: 15px;
+    }
+
+    #camera-container {
+        width: 100%;
+        height: 250px;
+        margin: 0 auto;
+    }
+
+    .scanner-frame {
+        width: 100%;
+        height: 100%;
+    }
+
+    .results-section {
+        padding: 15px;
+        margin-top: 20px;
+    }
+
+    .file-upload-label {
+        padding: 15px;
+        min-height: 44px;
+    }
+
+    button {
+        width: 100%;
+        margin: 10px 0;
+        min-height: 44px;
+    }
+
+    /* Mobile Navigation */
+    .dropdown-content {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background: var(--card-bg);
+        z-index: 1000;
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .dropdown-content.active {
+        transform: translateX(0);
+    }
+
+    .dropdown-item {
+        padding: 15px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    /* Login Form Mobile */
+    .login-box {
+        width: 95%;
+        padding: 20px;
+        margin: 20px auto;
+    }
+
+    .login-header h1 {
+        font-size: 1.5em;
+        margin: 10px 0;
+    }
+
+    .form-group {
+        margin-bottom: 15px;
+    }
+
+    .form-group input {
+        min-height: 44px;
+        font-size: 16px; /* Prevents zoom on iOS */
+    }
+
+    .login-btn {
+        width: 100%;
+        min-height: 44px;
+    }
+
+    .login-footer {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+}
+
+/* Tablet and Small Laptop */
+@media (min-width: 481px) and (max-width: 1024px) {
+    .header-container {
+        padding: 15px;
+    }
+
+    .container {
+        margin: 100px auto 30px;
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 2.2em;
+    }
+
+    .scanner-container {
+        gap: 20px;
+    }
+
+    .upload-section, .camera-section {
+        width: 48%;
+    }
+
+    #camera-container {
+        width: 100%;
+        height: 300px;
+    }
+
+    /* Admin Panel Tablet */
+    .admin-container {
+        flex-direction: column;
+    }
+
+    .admin-sidebar {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .admin-main {
+        width: 100%;
+    }
+}
+
+/* Large Screens */
+@media (min-width: 1025px) {
+    .header-container {
+        padding: 20px;
+    }
+
+    .container {
+        margin: 120px auto 40px;
+        padding: 30px;
+    }
+
+    h1 {
+        font-size: 2.5em;
+    }
+
+    /* Admin Panel Desktop */
+    .admin-container {
+        flex-direction: row;
+    }
+
+    .admin-sidebar {
+        width: 250px;
+        margin-bottom: 0;
+    }
+
+    .admin-main {
+        width: calc(100% - 250px);
+    }
+}
+
+/* Admin Panel Responsive Styles */
+@media (max-width: 768px) {
+    .admin-container {
+        flex-direction: column;
+    }
+
+    .admin-sidebar {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .admin-main {
+        width: 100%;
+    }
+
+    .admin-topbar {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .admin-search {
+        width: 100%;
+    }
+
+    .login-table {
+        display: block;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .stat-card {
+        width: 100%;
+        margin-bottom: 15px;
+    }
+}
+
+/* Touch-friendly elements */
+@media (hover: none) {
+    button, .dropdown-btn, .file-upload-label {
+        min-height: 44px;
+        padding: 12px 20px;
+    }
+
+    input, select, textarea {
+        min-height: 44px;
+        font-size: 16px; /* Prevents zoom on iOS */
+    }
+
+    .dropdown-item {
+        padding: 15px;
+    }
+}
+
+/* Landscape Mode Adjustments */
+@media (max-height: 480px) and (orientation: landscape) {
+    .login-box {
+        max-height: 90vh;
+        overflow-y: auto;
+    }
+
+    .container {
+        margin: 60px auto 20px;
+    }
+
+    .scanner-container {
+        flex-direction: row;
+    }
+
+    .upload-section, .camera-section {
+        width: 48%;
+    }
+}
+
+/* High DPI Screens */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .logo img {
+        width: 45px;
+        height: 45px;
+    }
+
+    button, input, .dropdown-item {
+        -webkit-tap-highlight-color: transparent;
+    }
+}
+
+/* Prevent text size adjustment on orientation change */
+html {
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+}
+
+/* Improve touch targets */
+button, a, input[type="submit"], input[type="button"] {
+    touch-action: manipulation;
+} 
